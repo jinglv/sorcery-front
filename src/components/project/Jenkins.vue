@@ -118,8 +118,6 @@ export default {
       let params = {
         commandRunCaseType: this.commandRunCaseType,
         commandRunCaseSuffix: this.commandRunCaseSuffix,
-        gitBranch: this.gitBranch,
-        gitUrl: this.gitURL,
         name: this.jenkinsName,
         password: this.jenkinsPassword,
         remark: this.remark,
