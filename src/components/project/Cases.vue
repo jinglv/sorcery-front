@@ -227,7 +227,7 @@ export default {
         caseData: this.caseData,
         remark: this.remark
       }
-      this.$api.cases.editCases(params).then(res => {
+      this.$api.cases.editCase(params).then(res => {
         // 调用接口，返回resultCode=1，说明接口调用成功
         if (res.data.resultCode === 1) {
           if (this.instanceNotify) {

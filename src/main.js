@@ -9,9 +9,9 @@ import api from './api/api'
 import 'element-ui/lib/theme-chalk/index.css'
 import {Notification} from 'element-ui'
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 // 将api/api.js挂载上
-Vue.prototype.$api = api
+Vue.prototype.$api = api;
 Vue.prototype.$notify = Notification;
 
 new Vue({

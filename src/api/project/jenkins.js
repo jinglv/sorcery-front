@@ -1,4 +1,4 @@
-import axios from './http'
+import axios from '../http'
 // 测试用例相关接口
 const jenkins = {
     // Jenkins管理

@@ -26,6 +26,7 @@
       </template>
 
       <template v-slot:item.action="{item}">
+        <!--执行状态为1（新建）则可以点击执行-->
         <v-btn v-if="item.status===1" color="primary" small @click="doTask(item)" class="btn">执行任务</v-btn>
         <v-btn small v-else disabled>执行任务</v-btn>
         <v-btn color="success" small @click="editTask(item)" class="btn">编辑</v-btn>
@@ -133,7 +134,24 @@ export default {
       }
       this.$api.task.doTask(params).then(res => {
         if (res.data.resultCode === 1) {
+          if (this.instanceNotify) {
+            this.instanceNotify.close()
+          }
+          this.instanceNotify = this.$notify({
+            title: '成功',
+            message: '测试任务执行',
+            type: 'success'
+          })
           this.getTaskList()
+        } else {
+          if (this.notifyInstance) {
+            this.notifyInstance.close()
+          }
+          this.notifyInstance = this.$notify({
+            title: '错误',
+            message: res.data.message,
+            type: 'error'
+          })
         }
       })
     },
@@ -143,6 +161,7 @@ export default {
         id: item.id
       }
       this.$api.report.getAllure(params).then(res => {
+        // _blank打开新的窗口，浏览器窗口跳转
         window.open(res.data.data.allureReportUrl, "_blank")
       })
     },

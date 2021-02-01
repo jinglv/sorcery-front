@@ -55,8 +55,6 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
    ![image-20210129113119361](https://gitee.com/JeanLv/study_image/raw/master///image-20210129113119361.png)
 
-
-
 ## 提示信息统一处理
 
 信息提示使用element-ui中的Message组件
@@ -65,7 +63,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
    ```shell
    npm install element-ui -S
    ```
-   
+
 2. src/main.js引入对应element-ui样式
 
    ![image-20210129131535827](https://gitee.com/JeanLv/study_image/raw/master///image-20210129131535827.png)
@@ -147,8 +145,6 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
    ![image-20210129141115855](https://gitee.com/JeanLv/study_image/raw/master///image-20210129141115855.png)
 
 ![image-20210129141152619](https://gitee.com/JeanLv/study_image/raw/master///image-20210129141152619.png)
-
-
 
 ## 组件消息提示
 
@@ -233,13 +229,10 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
        },
    ```
 
-   
 
 3. 展示效果
 
    ![image-20210129161919768](https://gitee.com/JeanLv/study_image/raw/master///image-20210129161919768.png)
-
-
 
 ## 分页处理
 
@@ -248,6 +241,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 3. 组件中处理分页
 
 ```vue
+
 <template>
   <div>
     <!--分页显示处理-->
@@ -287,4 +281,19 @@ export default {
 </style>
 
 ```
+
+## echarts使用
+
+[echarts中文官方文档](https://echarts.apache.org/zh/index.html)
+
+1. 安装element-ui
+
+```shell
+npm install echarts -S
+```
+
+2. 在report.vue的组件中引入并使用echarts
+
+![image-20210201155826395](https://gitee.com/JeanLv/study_image/raw/master///image-20210201155826395.png)
+
 

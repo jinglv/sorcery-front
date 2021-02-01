@@ -1,4 +1,4 @@
-import axios from './http'
+import axios from '../http'
 // 测试用例相关接口
 const cases = {
     // 通过文本数据，新增测试用例
