@@ -294,7 +294,7 @@ export default {
         caseIdList: casesId,
         testTask: {
           name: this.taskName,
-          taskRemark: this.taskRemark
+          remark: this.taskRemark
         }
       }
       this.$api.task.addTask(params).then(res => {
