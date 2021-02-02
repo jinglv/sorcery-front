@@ -119,11 +119,11 @@ export default {
         commandRunCaseType: this.commandRunCaseType,
         commandRunCaseSuffix: this.commandRunCaseSuffix,
         name: this.jenkinsName,
-        password: this.jenkinsPassword,
+        jenkinsPassword: this.jenkinsPassword,
+        jenkinsUsername: this.jenkinsUsername,
         remark: this.remark,
         testCommand: this.jenkinsCommand,
         url: this.jenkinsURL,
-        userName: this.jenkinsUsername,
         defaultJenkinsFlag: this.defaultJenkinsFlag ? 1 : 0
       }
       this.$api.jenkins.addJenkins(params).then(res => {
