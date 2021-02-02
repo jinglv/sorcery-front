@@ -137,8 +137,8 @@ export default {
       this.jenkinsName = item.name
       this.jenkinsCommand = item.testCommand
       this.jenkinsURL = item.url
-      this.jenkinsUsername = item.userName
-      this.jenkinsPassword = item.password
+      this.jenkinsUsername = item.jenkinsUsername
+      this.jenkinsPassword = item.jenkinsPassword
       this.remark = item.remark
       this.commandRunCaseType = item.commandRunCaseType
       this.commandRunCaseSuffix = item.commandRunCaseSuffix
@@ -151,11 +151,11 @@ export default {
         name: this.jenkinsName,
         commandRunCaseType: this.commandRunCaseType,
         commandRunCaseSuffix: this.commandRunCaseSuffix,
-        password: this.jenkinsPassword,
+        jenkinsUsername: this.jenkinsUsername,
+        jenkinsPassword: this.jenkinsPassword,
         remark: this.remark,
         testCommand: this.jenkinsCommand,
         url: this.jenkinsURL,
-        userName: this.jenkinsUsername,
         defaultJenkinsFlag: this.defaultJenkinsFlag ? 1 : 0
       }
       this.$api.jenkins.editJenkins(params).then(res => {
