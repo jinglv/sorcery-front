@@ -127,8 +127,27 @@ export default {
         defaultJenkinsFlag: this.defaultJenkinsFlag ? 1 : 0
       }
       this.$api.jenkins.addJenkins(params).then(res => {
-        this.getJenkinsList()
-        this.addDialog = false
+        if (res.data.resultCode === 1) {
+          if (this.instanceNotify) {
+            this.instanceNotify.close()
+          }
+          this.instanceNotify = this.$notify({
+            title: '成功',
+            message: '添加成功',
+            type: 'success'
+          })
+          this.getJenkinsList()
+          this.addDialog = false
+        } else {
+          if (this.notifyInstance) {
+            this.notifyInstance.close()
+          }
+          this.notifyInstance = this.$notify({
+            title: '错误',
+            message: res.data.message,
+            type: 'error'
+          })
+        }
       })
     },
     // 编辑Jenkins
@@ -161,8 +180,25 @@ export default {
       this.$api.jenkins.editJenkins(params).then(res => {
         // 调用接口，返回resultCode=1，说明接口调用成功
         if (res.data.resultCode === 1) {
+          if (this.instanceNotify) {
+            this.instanceNotify.close()
+          }
+          this.instanceNotify = this.$notify({
+            title: '成功',
+            message: '编辑成功',
+            type: 'success'
+          })
           this.getJenkinsList()
           this.editDialog = false
+        } else {
+          if (this.notifyInstance) {
+            this.notifyInstance.close()
+          }
+          this.notifyInstance = this.$notify({
+            title: '错误',
+            message: res.data.message,
+            type: 'error'
+          })
         }
       })
     },
@@ -173,7 +209,24 @@ export default {
       }
       this.$api.task.deleteJenkins(params).then(res => {
         if (res.data.resultCode === 1) {
+          if (this.instanceNotify) {
+            this.instanceNotify.close()
+          }
+          this.instanceNotify = this.$notify({
+            title: '成功',
+            message: '删除成功',
+            type: 'success'
+          })
           this.getJenkinsList()
+        } else {
+          if (this.notifyInstance) {
+            this.notifyInstance.close()
+          }
+          this.notifyInstance = this.$notify({
+            title: '错误',
+            message: res.data.message,
+            type: 'error'
+          })
         }
       })
     },
